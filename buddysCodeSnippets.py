@@ -50,8 +50,7 @@ highlight word and find in file · *
 search and replace all · :%s/first/second
 search and replace prompt first · :%s/first/second/gc
 ignore case in search · \c
-split window · :vsplit filename ctrl w left or right
-switch windows · hold ctrl + w
+switch windows · hold ctrl + ww
 switch tabs · gt
 close all · :qa
 refresh nerdtree · r

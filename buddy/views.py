@@ -18,10 +18,22 @@ def index(request):
 
 def detail(request, poo, var):
     spooge = get_object_or_404(Album, pk=var)
-    return render(request, 'buddy/detail.html', {'var_album': spooge, 'var_artist': poo})
+    return render(request, 'buddy/detail.html', {
+        'var_album': spooge,
+        'var_artist': poo,
+    })
 
 
-def favorite(request, album_id):
+def favorites(request, var):
     spooge = get_object_or_404(Album, pk=var)
     try:
-
+        buddyssong = spooge.song_set.get(pk=request.POST['da song'])
+    except (KeyError, Song.DoesNotExist):
+        return render(request, 'buddy/detail.html', {
+            'var_album': spooge,
+            'errr_message': "you fuck up bitch! you lost?"
+        })
+    else:
+        buddyssong.is_favorite = True
+        buddyssong.save()
+        return render(request, 'buddy/detail.html', {'var_album': spooge})

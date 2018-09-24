@@ -2,9 +2,10 @@
 <img src="{{ var_album.album_logo }}">
 
 <h1>{{ var_album.album_title }}</h1>
-<div><h2>{{ var_artist }}</h2></div>
+<div><h2>{{ var_album.artist }}</h2></div>
+
 {% if errr_message %}
-    <p><strong>errr_message</strong></p>
+    <p><strong>{{ errr_message }}</strong></p>
 {% endif %}
 
 <form action="{% url 'buddy:favorites' var_album.id %}" method="post">
@@ -14,10 +15,9 @@
         <label for="s{{ forloop.counter }}" >
             {{ s.song_title }}
             {% if s.is_favorite %}
-                <img src="http://i.imgur.com/b9b13Rd.png">
+                <img src="http://i.imgur.com/b9b13Rd.png" />
             {% endif %}
         </label><br>
     {% endfor %}
-    <input type="submit" value="Favorite"/>
-
+    <input type="submit" value="buddy's favorite songs"/>
 </form>
