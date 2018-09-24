@@ -19,3 +19,9 @@ def index(request):
 def detail(request, poo, var):
     spooge = get_object_or_404(Album, pk=var)
     return render(request, 'buddy/detail.html', {'var_album': spooge, 'var_artist': poo})
+
+
+def favorite(request, album_id):
+    spooge = get_object_or_404(Album, pk=var)
+    try:
+

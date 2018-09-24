@@ -61,6 +61,7 @@ uncomment muliple lines · ctrl v then arrow the lines , x
 
 ### HTML SNIPPETS
 <a href="#">title</a>'
+<form action="/action_page.php">
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
