@@ -1,0 +1,11 @@
+<a href="/buddy/">home</a><br><br>
+<img src="{{ var_album.album_logo }}">
+
+<h1>{{ var_album.album_title }}</h1>
+<div><h2>{{ var_artist }}</h2></div>
+
+<ul>
+    {% for i in var_album.song_set.all %}
+    <li>{{ i.song_title }} · {{ i.file_type }}</li>
+    {% endfor %}
+</ul>

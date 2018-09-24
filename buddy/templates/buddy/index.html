@@ -1,0 +1,12 @@
+    {% if all_albums %}
+        <ul>
+            {% for i in all_albums %}
+            <li><a href="{% url 'buddy:detail' poo=i.artist var=i.id %}">{{ i.album_title }}</a></li>
+            {% if i.id == 3 %}
+                <p>wow! {{ i.genre }} music is cool and this is the 3rd one!!</p>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h4>sucks you don't got shit bitch!!</h4>
+    {% endif %}
