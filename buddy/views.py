@@ -24,7 +24,7 @@ def detail(request, poo, var):
     })
 
 
-def favorites(request, var):
+def favorites(request, poo, var):
     spooge = get_object_or_404(Album, pk=var)
     try:
         buddyssong = spooge.song_set.get(pk=request.POST['da song'])
@@ -36,4 +36,7 @@ def favorites(request, var):
     else:
         buddyssong.is_favorite = True
         buddyssong.save()
-        return render(request, 'buddy/detail.html', {'var_album': spooge})
+        return render(request, 'buddy/detail.html', {
+            'var_album': spooge,
+            'var_artist': poo,
+        })

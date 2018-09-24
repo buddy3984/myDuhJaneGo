@@ -41,6 +41,7 @@ see hidden files in neard tree · shift i
 select text to copy in vim: first hide numbers · :set nonu · command r or fn key
 return bring back numbers · :set nu
 paste cyle through history · cntrl p or cntrl n
+copy and past text · y, p to paste at cursor or :put
 go to top of file · gg
 bottome of file · shift g
 go to any line· number then gg

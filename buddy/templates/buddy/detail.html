@@ -8,7 +8,7 @@
     <p><strong>{{ errr_message }}</strong></p>
 {% endif %}
 
-<form action="{% url 'buddy:favorites' var_album.id %}" method="post">
+<form action="{% url 'buddy:favorites' var_artist var_album.id %}" method="post">
     {% csrf_token %}
     {% for s in var_album.song_set.all %}
         <input type="checkbox" id="s{{ forloop.counter }}" name="da song" value="{{ s.id }}" />
